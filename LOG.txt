@@ -1,0 +1,41 @@
+[Reloaded] Create Loader | Time: 180ms
+[Reloaded] Loaded: reloaded.sharedlib.hooks in 192ms
+[Reloaded] Current Process Location: S:\SteamLibrary\steamapps\common\P3R\P3R\Binaries\Win64\P3R.exe
+[Reloaded] Loaded: Reloaded.Memory.SigScan.ReloadedII in 297ms
+Starting FileEmulationFramework
+[Reloaded] Loaded: reloaded.universal.fileemulationframework in 321ms
+[R-II SteamHook] SteamAPI_RestartAppIfNecessary hooked successfully.
+[R-II SteamHook] SteamAPI_IsSteamRunning hooked successfully.
+[Reloaded] Loaded: UTOC.Stream.Emulator in 106ms
+Starting UTOC.Stream.Emulator
+[Reloaded] Loaded: UnrealEssentials in 80ms
+[R-II SteamHook] Found Steam Library Entry with Id 2161700. Dropping steam_appid.txt.
+[Reloaded] Setting Up Hooks (Async) | Time: 946ms
+[Reloaded] Loaded: p3rpc.essentials in 89ms
+[Reloaded] Loaded: BGME.Framework.API in 120ms
+[BGME Battle Themes] [DBG] Building song: D:\PersonaMods\TOOLS\Reloaded_II\Mods\P3R.bgm.MakotoMP3.battle-themes\battle-themes\music\diagetic-linkin_park-one_step_closer.hca
+[BGME Battle Themes] [ERR] Failed to start battle themes service.
+One or more errors occurred. (Cannot find key to decrypt HCA file.)
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at BGME.BattleThemes.Themes.MusicRegistry.RegisterModMusic(String modId, String modDir)
+   at BGME.BattleThemes.Themes.MusicRegistry.RegisterMusic()
+   at BGME.BattleThemes.Themes.MusicRegistry..ctor(Game game, Config config, String modDir, String[] enabledMods)
+   at BGME.BattleThemes.Mod..ctor(ModContext context)
+[Reloaded] Loaded: BGME.BattleThemes in 447ms
+[BGME Framework API] [INF] Music script added.
+[Reloaded] Loaded: P3R.bgm.MakotoMP3.battle-themes in 329ms
+[UtocEmulator] Found OpenContainer at 0x1416A75E0
+[P3R Essentials] Found Intro Skip at 0x1414EE1E0
+[P3R Essentials] Found Caution Skip at 0x1414EDC10
+################################################################################
+                  ASSET COLLECTOR: Collected files from 0 mods
+================================================================================
+WARNING: No mod files were loaded for UnrealEssentials.utoc
+[UtocEmulator] An error occurred while making IO Store data
+[Reloaded] Loading Mods (Total) | Time: 2124ms
+[Reloaded] Total Loader Initialization Time: 2599ms
+Setting breakpad minidump AppID = 2161700
+SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561198036505111 [API loaded no]
+SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561198036505111 [API loaded no]
+[P3R Essentials] Found Window, Hooking WndProc.

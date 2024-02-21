@@ -1,0 +1,65 @@
+{
+  "ModId": "P3R.bgm.MakotoMP3.battle-themes",
+  "ModName": "P3R Makoto\u0027s Diegetic MP3 Player",
+  "ModAuthor": "cerebralpolicy",
+  "ModVersion": "0.1.1",
+  "ModDescription": "Template for a Reloaded Mod Configuration",
+  "ModDll": "",
+  "ModIcon": "MDMP3_Logo.png",
+  "ModR2RManagedDll32": "",
+  "ModR2RManagedDll64": "",
+  "ModNativeDll32": "",
+  "ModNativeDll64": "",
+  "Tags": [
+    "Music"
+  ],
+  "CanUnload": null,
+  "HasExports": null,
+  "IsLibrary": false,
+  "ReleaseMetadataFileName": "P3R.bgm.MakotoMP3.battle-themes.ReleaseMetadata.json",
+  "PluginData": {
+    "GameBananaDependencies": {
+      "IdToConfigMap": {
+        "BGME.BattleThemes": {
+          "Config": {
+            "ItemType": "Mod",
+            "ItemId": 488707
+          },
+          "ReleaseMetadataName": "BGME.BattleThemes.ReleaseMetadata.json"
+        },
+        "BGME.Framework.API": {
+          "Config": {
+            "ItemType": "Mod",
+            "ItemId": 477399
+          },
+          "ReleaseMetadataName": "BGME.Framework.API.ReleaseMetadata.json"
+        }
+      }
+    },
+    "GitHubDependencies": {
+      "IdToConfigMap": {
+        "reloaded.sharedlib.hooks": {
+          "Config": {
+            "UserName": "Sewer56",
+            "RepositoryName": "Reloaded.SharedLib.Hooks.ReloadedII",
+            "UseReleaseTag": true,
+            "AssetFileName": "reloaded.sharedlib.hooks.zip"
+          },
+          "ReleaseMetadataName": "Sewer56.Update.ReleaseMetadata.json"
+        }
+      }
+    }
+  },
+  "IsUniversalMod": false,
+  "ModDependencies": [
+    "BGME.BattleThemes"
+  ],
+  "OptionalDependencies": [],
+  "SupportedAppId": [
+    "p3p.exe",
+    "p3r.exe",
+    "p4g.exe",
+    "p5r.exe"
+  ],
+  "ProjectUrl": ""
+}
