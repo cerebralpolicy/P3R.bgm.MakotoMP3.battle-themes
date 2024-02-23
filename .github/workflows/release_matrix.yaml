@@ -33,9 +33,9 @@ jobs:
       uses: michpohl/action-concatenate-strings@v1.0.1
       with:
         # Your first string
-        first: $ModID
+        first: echo "$ModID"
         # Your second string
-        second: $ModVersion
+        second: echo "$ModVersion"
         # A string to put between the first and second provided strings
         separator: '-'
         # The name of the output env var
