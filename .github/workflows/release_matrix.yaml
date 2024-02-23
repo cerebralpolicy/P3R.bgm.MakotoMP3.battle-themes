@@ -74,3 +74,4 @@ jobs:
           generateReleaseNotes: true
           skipIfReleaseExists: true
           tag: ${{ steps.mod_version.outputs.value }}
+          token: ${{ secrets.THIS_TOKEN }}
