@@ -16,5 +16,5 @@ jobs:
         path: ModConfig.json # optional, default is package.json
         # Property or an array to read eg: "[name, version, repository.url]" or "name"
         properties: "[ModID, ModVersion]"
- 
-          
+    - name: echo Version
+      run: echo ${{ steps.versionString.outputs.value }}}
