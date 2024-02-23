@@ -16,4 +16,4 @@ jobs:
         # Property or an array to read eg: "[name, version, repository.url]" or "name"
         properties: "[ModID, ModVersion]"
     - name: echo Version
-      run: echo ${{ steps.getVersionString.outputs.array }}}
+      run: echo ${{ steps.getVersionString.outputs.value }}}
