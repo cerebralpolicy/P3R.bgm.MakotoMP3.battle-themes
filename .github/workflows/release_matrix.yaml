@@ -43,4 +43,3 @@ jobs:
     - name: echoZipName
       run: 
         echo ${{ steps.mod_id.zipnamer.value }}
-        echo ${{ zip_package }}
