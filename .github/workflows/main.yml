@@ -1,5 +1,6 @@
 name: Create Zip File
-on: [push]
+on: 
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,7 +27,11 @@ jobs:
       env:
         release_mod_id: ${{ steps.mod_id.outputs.value }}
       #build zip
+    - name: Generate Name
+      with:
+        name_array: ( "$release_mod_id" "$release_mod_version" )
+        name: join(name_array)
     - name: Generate ZIP
       uses: byteever/action-build-zip@master
       with:
-        filename: '$release_mod_id-$release_mod_version.zip'
+        filename: '$name.zip'
