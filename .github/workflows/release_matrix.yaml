@@ -23,6 +23,24 @@ jobs:
         path: ModConfig.json
         property: ModId
     - name: echo ModId
-      run: echo ${{ steps.mod_id.outputs.value }}}
+      run: echo ${{ steps.mod_id.outputs.value }}
       env:
         release_mod_id: ${{ steps.mod_id.outputs.value }}
+    - name: Concatenate strings with separator
+      id: zip_namer
+      # You may pin to the exact commit or the version.
+      # uses: michpohl/action-concatenate-strings@595fbe6538a309ac7f4c6afbc5c11b9d6e724ef8
+      uses: michpohl/action-concatenate-strings@v1.0.1
+      with:
+        # Your first string
+        first: ModID
+        # Your second string
+        second: ModVersion
+        # A string to put between the first and second provided strings
+        separator: '-'
+        # The name of the output env var
+        output-var-name: zip_package
+    - name: echoZipName
+      run: 
+        echo ${{ steps.mod_id.zipnamer.value }}
+        echo ${{ zip_package }}
