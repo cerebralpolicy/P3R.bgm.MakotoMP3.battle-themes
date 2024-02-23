@@ -74,4 +74,3 @@ jobs:
           generateReleaseNotes: true
           skipIfReleaseExists: true
           tag: ${{ steps.mod_version.outputs.value }}
-          token: ${{ secrets.GITHUB_TOKEN }}
