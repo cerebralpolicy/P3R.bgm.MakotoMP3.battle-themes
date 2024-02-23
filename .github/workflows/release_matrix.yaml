@@ -73,5 +73,6 @@ jobs:
           artifacts: ${{ env.ZIP_NAME }}.zip
           generateReleaseNotes: true
           skipIfReleaseExists: true
+          name: ${{ env.ZIP_NAME }}.zip
           tag: ${{ steps.mod_version.outputs.value }}
           token: ${{ secrets.THIS_TOKEN }}
