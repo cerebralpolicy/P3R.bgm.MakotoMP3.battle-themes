@@ -28,10 +28,21 @@ jobs:
         release_mod_id: ${{ steps.mod_id.outputs.value }}
       #build zip
     - name: Generate Name
+      id: zip_name
+      uses: aymen3009/slugifyAction@v1.1.1
       with:
-        name_array: ( "$release_mod_id" "$release_mod_version" )
-        name: join(name_array)
+        # string input
+        string: steps.mod_id.outputs.value # default is Hello World
+        suffix: steps.mod_version.outputs.value
+    - name: Generate File Name
+      id: zip_filename
+      uses: aymen3009/slugifyAction@v1.1.1
+      with:
+        # string input
+        string: steps.zip_name.outputs.value # default is Hello World
+        suffix: ".zip"
+        slugify: false
     - name: Generate ZIP
       uses: byteever/action-build-zip@master
       with:
-        filename: '$name.zip'
+        filename: steps.zip_filename.outputs.value
