@@ -14,8 +14,6 @@ jobs:
         property: ModVersion
     - name: echo ModVersion
       run: echo ${{ steps.mod_version.outputs.value }}
-      env:
-        MOD_VER: ${{ steps.mod_version.outputs.value }}
     - name: Get Mod ID
       id: mod_id
       uses:  ashley-taylor/read-json-property-action@v1.2
@@ -24,8 +22,6 @@ jobs:
         property: ModId
     - name: echo ModId
       run: echo ${{ steps.mod_id.outputs.value }}
-      env:
-        MOD: ${{ steps.mod_id.outputs.value }}
     - name: Concatenate strings with separator
       id: zip_namer
       # You may pin to the exact commit or the version.
@@ -33,9 +29,9 @@ jobs:
       uses: michpohl/action-concatenate-strings@v1.0.1
       with:
         # Your first string
-        first: ${{ env.MOD }}
+        first: ${{ steps.mod_id.outputs.value }}
         # Your second string
-        second: ${{ env.MOD_VER }}
+        second: ${{ steps.mod_version.outputs.value }}
         # A string to put between the first and second provided strings
         separator: '-'
         # The name of the output env var
