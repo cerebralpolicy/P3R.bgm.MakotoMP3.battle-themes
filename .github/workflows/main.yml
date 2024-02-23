@@ -1,6 +1,32 @@
-name: action-build-zip
-  # You may pin to the exact commit or the version.
-  # uses: byteever/action-build-zip@23d77e1778849e35de1b4e9dbb16d4b64a4714e6
-uses: byteever/action-build-zip@1
-  with:
-    filename: # optional        
+name: Create Zip File
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Get Mod Version Number
+      id: mod_version
+      uses:  ashley-taylor/read-json-property-action@v1.2
+      with:
+        path: ModConfig.json
+        property: ModVersion
+    - name: echo ModVersion
+      run: echo ${{ steps.mod_version.outputs.value }}
+      env:
+        release_mod_version: ${{ steps.mod_version.outputs.value }}
+    - name: Get Mod ID
+      id: mod_id
+      uses:  ashley-taylor/read-json-property-action@v1.2
+      with:
+        path: ModConfig.json
+        property: ModId
+    - name: echo ModId
+      run: echo ${{ steps.mod_id.outputs.value }}}
+      env:
+        release_mod_id: ${{ steps.mod_id.outputs.value }}
+      #build zip
+    - name: Generate ZIP
+      uses: byteever/action-build-zip@master
+      with:
+        filename: '$release_mod_id-$release_mod_version.zip'
