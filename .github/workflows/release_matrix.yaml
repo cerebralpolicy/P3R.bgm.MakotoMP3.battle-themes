@@ -1,10 +1,6 @@
 name: Release Name Generator
 on:
   workflow_dispatch:
-defaults:
-  run:
-    shell: bash
-    working-directory: .
 jobs:
   getVersion:
     runs-on: ubuntu-latest
