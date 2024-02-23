@@ -11,7 +11,7 @@ jobs:
       id: mod_version
       uses:  ashley-taylor/read-json-property-action@v1.2
       with:
-        path: ModConfig.json
+        path: ././ModConfig.json
         property: ModVersion
     - name: echo ModVersion
       run: echo ${{ steps.mod_version.outputs.value }}
@@ -22,7 +22,7 @@ jobs:
       uses:  ashley-taylor/read-json-property-action@v1.2
       with:
         path: ModConfig.json
-        property: ModId
+        property: ././ModId
     - name: echo ModId
       run: echo ${{ steps.mod_id.outputs.value }}}
       env:
