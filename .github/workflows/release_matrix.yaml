@@ -48,8 +48,16 @@ jobs:
       steps:
       - env:
           ZIP_NAME: ${{needs.getVersion.outputs.archiveString}}
-        run: echo "$ZIP_NAME"
+        run: echo "$env.ZIP_NAME"
       - uses: actions/checkout@master
+      - name: Get Mod Version Number
+        id: mod_version
+        uses:  ashley-taylor/read-json-property-action@v1.2
+        with:
+          path: ModConfig.json
+          property: ModVersion
+      - name: echo ModVersion
+        run: echo ${{ steps.mod_version.outputs.value }}  
       - name: Zip Release
         # You may pin to the exact commit or the version.
         # uses: TheDoctor0/zip-release@b57d897cb5d60cb78b51a507f63fa184cfe35554
@@ -58,4 +66,12 @@ jobs:
           # Filename for archive
           filename: ${{ env.ZIP_NAME }}.zip # default is release.zip
           # Base path for archive files
-                
+          exclusions: '*.git* /*.github/* .editorconfig'
+      - name: Upload Release
+        uses: ncipollo/release-action@v1.12.0
+        with:
+          artifacts: ${{ env.ZIP_NAME }}.zip
+          generateReleaseNotes: true
+          skipIfReleaseExists: true
+          tag: ${{ steps.mod_version.outputs.value }}
+          token: ${{ secrets.GITHUB_TOKEN }}
