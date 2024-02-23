@@ -34,6 +34,8 @@ jobs:
         # string input
         string: steps.mod_id.outputs.value # default is Hello World
         suffix: steps.mod_version.outputs.value
+    - name: echo Zip Name
+      run: echo ${{ steps.zip_name.outputs.value }}}
     - name: Generate File Name
       id: zip_filename
       uses: aymen3009/slugifyAction@v1.1.1
