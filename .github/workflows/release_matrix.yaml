@@ -40,7 +40,7 @@ jobs:
         output-var-name: ZIP_NAME
     - name: echoZipName
       id: nameOUT
-      run: echo genName = ${{ env.ZIP_NAME }} >> "$GITHUB_OUTPUT"
+      run: echo "genName = $env.ZIP_NAME" >> "$GITHUB_OUTPUT"
   
   buildZip:
       runs-on: ubuntu-latest
