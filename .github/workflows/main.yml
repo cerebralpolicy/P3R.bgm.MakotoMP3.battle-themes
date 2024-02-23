@@ -29,7 +29,7 @@ jobs:
       #build zip
     - name: Generate Name
       id: zip_name
-      run: echo "${{join((steps.mod_id.outputs.value steps.mod_version.outputs.value))}} >> $GITHUB_OUTPUT"        
+      run: echo ${{ join((release_mod_id release_mod_version)) >> $GITHUB_OUTPUT }}        
     - name: echo Zip Name
       run: echo ${{ steps.zip_name.outputs.value }}}
     - name: Generate File Name
