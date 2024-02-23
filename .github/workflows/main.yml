@@ -2,10 +2,11 @@ name: Create Zip File
 on: 
   workflow_dispatch:
 jobs:
-  build:
+  job1:
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-    - uses: actions/checkout@master
     - name: Get Mod Version Number
       id: mod_version
       uses:  ashley-taylor/read-json-property-action@v1.2
@@ -26,6 +27,18 @@ jobs:
       run: echo ${{ steps.mod_id.outputs.value }}}
       env:
         release_mod_id: ${{ steps.mod_id.outputs.value }}
+    - id: set-matrix
+      run: echo "::set-output name=matrix::{\"include\":[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}"
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{fromJson(needs.job1.outputs.matrix)}}
+    steps:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@maste
       #build zip
     - name: Generate Name
       id: zip_name
