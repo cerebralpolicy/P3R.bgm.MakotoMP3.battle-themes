@@ -13,7 +13,7 @@ jobs:
       uses: Muchaszewski/read-json-action@1.0.0
       with:
         # Path to the json file
-        path: ModConfig.json # optional, default is package.json
+        path: "ModConfig.json" # optional, default is package.json
         # Property or an array to read eg: "[name, version, repository.url]" or "name"
         properties: "[ModID, ModVersion]"
     - name: echo Version
