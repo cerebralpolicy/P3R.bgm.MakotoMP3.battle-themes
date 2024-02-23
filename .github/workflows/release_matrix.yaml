@@ -4,6 +4,8 @@ on:
 jobs:
   getVersion:
     runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ steps.nameOUT.outputs.genname }}
     steps:
     - uses: actions/checkout@master
     - name: Get Mod Version Number
@@ -37,8 +39,9 @@ jobs:
         # The name of the output env var
         output-var-name: ZIP_NAME
     - name: echoZipName
+      id: nameOUT
       run: 
-        echo ${{ env.ZIP_NAME }}
+        echo ${{ genname = env.ZIP_NAME }} >> "$GITHUB_OUTPUT"
   
   buildZip:
       runs-on: ubuntu-latest
