@@ -11,7 +11,6 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: getVersionString
-      id: versionString
       # You may pin to the exact commit or the version.
       # uses: Muchaszewski/read-json-action@25572fc3515f2520c4d18072d815c368e2c5d323
       uses: Muchaszewski/read-json-action@1.0.0
@@ -21,4 +20,4 @@ jobs:
         # Property or an array to read eg: "[name, version, repository.url]" or "name"
         properties: "[ModID, ModVersion]"
     - name: echo Version
-      run: echo ${{ steps.versionString.outputs.value }}}
+      run: echo ${{ steps.getVersionString.outputs.array }}}
