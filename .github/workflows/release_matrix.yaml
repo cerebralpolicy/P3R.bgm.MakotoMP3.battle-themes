@@ -6,14 +6,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: getVersionString
-      # You may pin to the exact commit or the version.
-      # uses: Muchaszewski/read-json-action@25572fc3515f2520c4d18072d815c368e2c5d323
-      uses: Muchaszewski/read-json-action@1.0.0
+    - name: Get Mod Version Number
+      id: mod_version
+      uses:  ashley-taylor/read-json-property-action@v1.2
       with:
-        # Path to the json file
-        path: ModConfig.json # optional, default is package.json
-        # Property or an array to read eg: "[name, version, repository.url]" or "name"
-        properties: "[ModID, ModVersion]"
-    - name: echo Version
-      run: echo ${{ steps.getVersionString.outputs.value }}}
+        path: ModConfig.json
+        property: ModVersion
+    - name: echo ModVersion
+      run: echo ${{ steps.mod_version.outputs.value }}
+      env:
+        release_mod_version: ${{ steps.mod_version.outputs.value }}
+    - name: Get Mod ID
+      id: mod_id
+      uses:  ashley-taylor/read-json-property-action@v1.2
+      with:
+        path: ModConfig.json
+        property: ModId
+    - name: echo ModId
+      run: echo ${{ steps.mod_id.outputs.value }}}
+      env:
+        release_mod_id: ${{ steps.mod_id.outputs.value }}
