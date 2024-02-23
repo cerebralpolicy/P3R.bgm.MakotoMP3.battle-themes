@@ -5,7 +5,7 @@ jobs:
   getVersion:
     runs-on: ubuntu-latest
     outputs:
-      output1: ${{ steps.nameOUT.outputs.genname }}
+      archiveString: ${{ steps.nameOUT.outputs.genname }}
     steps:
     - uses: actions/checkout@master
     - name: Get Mod Version Number
@@ -48,6 +48,8 @@ jobs:
       needs: getVersion
       steps:
       - uses: actions/checkout@master
+      - env:
+          ZIP_NAME: ${{needs.getVersion.outputs.archiveString}}
       - name: Zip Release
         # You may pin to the exact commit or the version.
         # uses: TheDoctor0/zip-release@b57d897cb5d60cb78b51a507f63fa184cfe35554
