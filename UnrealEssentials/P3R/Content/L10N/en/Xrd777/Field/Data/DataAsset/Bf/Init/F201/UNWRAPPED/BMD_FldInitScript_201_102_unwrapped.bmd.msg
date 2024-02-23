@@ -1,7 +1,7 @@
 [msg MSG_MITSURU_FIRST_TRY [Mitsuru Kirijo]]
 [uf 0 5 65278][uf 2 1][uf 4 5 5 0 65535 65535 0 0][uf 3 1 3 0 65535 4008 0 0]The entrance to the labyrinth is at the top of the stairs. Whenever you feel ready to start, lead the way.[n][uf 1 1][e]
-[uf 0 5 65278][uf 2 1][uf 4 5 5 0 65535 65535 0 0][uf 3 1 3 0 65535 4009 0 0]By the way, I took the liberty of supplying you with a new music player. In the midst of all the chaos, Ikutski dropped your old one. My apologies.[n][uf 1 1][e]
-[uf 0 5 65278][uf 2 1][uf 4 5 5 0 65535 65535 0 0][uf 3 1 3 0 65535 4009 0 0]With that said, I have been told that the replacement is a prototype. You should find that it works in Tartarus.[n][uf 1 1][e]
+[uf 0 5 65278][uf 2 1][uf 4 5 5 0 65535 65535 0 0][uf 3 1 3 0 65535 4073 0 0]By the way, I took the liberty of supplying you with a new music player. In the midst of all the chaos, Ikutski dropped your old one. My apologies.[n][uf 1 1][e]
+[uf 0 5 65278][uf 2 1][uf 4 5 5 0 65535 65535 0 0]With that said, I have been told that the replacement is a prototype. You should find that it works in Tartarus.[n][uf 1 1][e]
 
 [msg MSG_MITSURU_ENT_HELP [Mitsuru Kirijo]]
 [uf 0 5 65278][uf 2 1][uf 4 5 5 0 65535 65535 0 0][uf 3 1 1 0 1 10089 0 0]As we explore Tartarus, this will be our temporary base of operations.[n][uf 1 1][e]
