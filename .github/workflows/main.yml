@@ -4,7 +4,7 @@
   uses: TheDoctor0/zip-release@0.7.6
   with:
     # Filename for archive
-    filename:  # default is release.zip
+    filename: update.zip # default is release.zip
     # Base path for archive files
     path: # optional, default is .
     # Working directory before zipping
