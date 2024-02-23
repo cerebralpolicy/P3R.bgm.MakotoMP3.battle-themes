@@ -1,47 +1,20 @@
 name: Release Name Generator
 on:
   workflow_call:
-    inputs:
-      name:
-        required: true
-        type: string
-      version:
-        required: true
-        type: string
-    outputs:
-      image:
-        description: "Image"
-        value: ${{ jobs.write.outputs.image }}
 
 jobs:
-  build:
+  getVersion:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Build
-        id: build
-        uses: cloudposse/github-action-docker-build-push@1.9.0
-        with:
-          name: ${{ inputs.name }}
-          version: ${{ inputs.version }}
-    outputs:
-      image: ${{ needs.build.outputs.image }}:${{ needs.build.outputs.tag }}
-
-  write:
-    runs-on: ubuntu-latest
-    needs: [build]
-    steps:        
-      ## Write for matrix outputs workaround 
-      - uses: cloudposse/github-action-matrix-outputs-write@main
-        id: out
-        with:
-          matrix-step-name: ${{ inputs.matrix-step-name }}
-          matrix-key: ${{ inputs.matrix-key }}
-          outputs: |-
-            image: ${{ needs.build.outputs.image }}
-
-    outputs:
-      image: ${{ fromJson(steps.out.outputs.result).image }}
-      image_alternative: ${{ steps.out.outputs.image }}
+    - name: getVersionString
+      id: versionString
+      # You may pin to the exact commit or the version.
+      # uses: Muchaszewski/read-json-action@25572fc3515f2520c4d18072d815c368e2c5d323
+      uses: Muchaszewski/read-json-action@1.0.0
+      with:
+        # Path to the json file
+        path: ModConfig.json # optional, default is package.json
+        # Property or an array to read eg: "[name, version, repository.url]" or "name"
+        properties: "[ModID, ModVersion]"
+ 
+          
