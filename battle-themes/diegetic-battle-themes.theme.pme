@@ -1,4 +1,5 @@
 ﻿const diegetic_battle_bgm = [
+    // WESTERN
     // chevelle
         diegetic-chevelle-another_know_it_all, diegetic-chevelle-antisaint, diegetic-chevelle-forfeit, diegetic-chevelle-midnight_to_midnight,
     // linkin_park
@@ -6,7 +7,10 @@
     // papa_roach
         diegetic-papa_roach-do_or_die, diegetic-papa_roach-getting_away_with_murder, diegetic-papa_roach-life_is_a_bullet, diegetic-papa_roach-she_loves_me_not,
     // saosin
-        diegetic-saosin-changing, diegetic-saosin-i_keep_my_secrets, diegetic-saosin-seven_years, diegetic-saosin-translating_the_name
+        diegetic-saosin-changing, diegetic-saosin-i_keep_my_secrets, diegetic-saosin-seven_years, diegetic-saosin-translating_the_name,
+    // DOMESTIC
+    // coldrain
+        diegetic-coldrain-counterfeits_and_lies, diegetic-coldrain-doors, diegetic-coldrain-final_destination, diegetic-coldrain-just_tonight, diegetic-coldrain-my_addiction, diegetic-coldrain-painting, diegetic-coldrain-someday, diegetic-coldrain-survive
     ]
 
 const BATTLE_THEME = battle_victory_set(random_song(diegetic_battle_bgm), diegetic-linkin_park-cure_for_the_itch)
