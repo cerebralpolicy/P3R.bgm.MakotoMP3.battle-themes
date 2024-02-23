@@ -4,8 +4,6 @@ on:
 jobs:
   read_mod_config:
     runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.release_name.outputs.value }}
     steps:
     - name: Get Mod Version Number
       id: mod_version
