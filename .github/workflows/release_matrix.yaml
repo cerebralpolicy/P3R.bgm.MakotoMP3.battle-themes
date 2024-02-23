@@ -42,6 +42,7 @@ jobs:
   
   buildZip:
       runs-on: ubuntu-latest
+      needs: getVersion
       steps:
       - uses: actions/checkout@master
       - name: Zip Release
