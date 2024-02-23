@@ -17,4 +17,9 @@ global_bgm["tartarus_0d05"]:
     music = makoto_mp3
 end
 
+const forfeit_boss_track = 4002
 // encounter
+encounter["Minibosses"]:
+    music = forfeit_boss_track
+    victory_music = forfeit_boss_track
+end
