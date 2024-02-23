@@ -39,7 +39,7 @@ jobs:
         # A string to put between the first and second provided strings
         separator: '-'
         # The name of the output env var
-        output-var-name: zip_package
+        output-var-name: ZIP_NAME
     - name: echoZipName
       run: 
         echo ${{ steps.mod_id.zipnamer.value }}
