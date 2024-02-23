@@ -1,0 +1,47 @@
+name: Release Name Generator
+on:
+  workflow_call:
+    inputs:
+      name:
+        required: true
+        type: string
+      version:
+        required: true
+        type: string
+    outputs:
+      image:
+        description: "Image"
+        value: ${{ jobs.write.outputs.image }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build
+        id: build
+        uses: cloudposse/github-action-docker-build-push@1.9.0
+        with:
+          name: ${{ inputs.name }}
+          version: ${{ inputs.version }}
+    outputs:
+      image: ${{ needs.build.outputs.image }}:${{ needs.build.outputs.tag }}
+
+  write:
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:        
+      ## Write for matrix outputs workaround 
+      - uses: cloudposse/github-action-matrix-outputs-write@main
+        id: out
+        with:
+          matrix-step-name: ${{ inputs.matrix-step-name }}
+          matrix-key: ${{ inputs.matrix-key }}
+          outputs: |-
+            image: ${{ needs.build.outputs.image }}
+
+    outputs:
+      image: ${{ fromJson(steps.out.outputs.result).image }}
+      image_alternative: ${{ steps.out.outputs.image }}
