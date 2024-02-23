@@ -1,0 +1,6 @@
+﻿const forfeit_boss_track = 4002
+// encounter
+encounter["Minibosses"]:
+    music = forfeit_boss_track
+    victory_music = forfeit_boss_track
+end
