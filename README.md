@@ -61,10 +61,3 @@ Saosin
 ------
 
 I Keep My Secrets Safe (Sept. 2009), I Keep My Secrets Safe (Sept. 2009), Seven Years (2003), Translating the Name (2003)  
-  
-
-Future Artists
---------------
-
-Japanese/Western  
-Hide, Kiri, Nine Inch Nails, X Japan
