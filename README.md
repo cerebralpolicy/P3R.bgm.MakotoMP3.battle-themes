@@ -15,11 +15,12 @@ In this pursuit, I am sticking to a few rules.
 TO DO
 =====
 
-*   Add dialogue addressing Makoto's MP3 working in Tartarus
+*   ~~Add dialogue addressing Makoto's MP3 working in Tartarus~~
 *   Add date conditionals to songs released in 2009
 *   Add Japanese artists to playlists
+ *   Coldrain added
 *   Create monthly playlists to replace overworld BGM
-*   Normalize volume with vanilla BGM
+*   ~~Normalize volume with vanilla BGM~~
 *   Implement improved audio quality upon reaching Priestess Rank 10
 
 * * *
