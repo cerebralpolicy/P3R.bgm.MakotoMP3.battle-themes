@@ -20,19 +20,19 @@
   "PluginData": {
     "GameBananaDependencies": {
       "IdToConfigMap": {
-        "p3rpc.essentials": {
-          "Config": {
-            "ItemType": "Mod",
-            "ItemId": 494020
-          },
-          "ReleaseMetadataName": "p3rpc.essentials.ReleaseMetadata.json"
-        },
         "BGME.BattleThemes": {
           "Config": {
             "ItemType": "Mod",
             "ItemId": 488707
           },
           "ReleaseMetadataName": "BGME.BattleThemes.ReleaseMetadata.json"
+        },
+        "p3rpc.essentials": {
+          "Config": {
+            "ItemType": "Mod",
+            "ItemId": 494020
+          },
+          "ReleaseMetadataName": "p3rpc.essentials.ReleaseMetadata.json"
         },
         "BGME.Framework.API": {
           "Config": {
@@ -54,15 +54,6 @@
           },
           "ReleaseMetadataName": "p3rpc.essentials.ReleaseMetadata.json"
         },
-        "Reloaded.Memory.SigScan.ReloadedII": {
-          "Config": {
-            "UserName": "Reloaded-Project",
-            "RepositoryName": "Reloaded.Memory.SigScan",
-            "UseReleaseTag": false,
-            "AssetFileName": "Mod.zip"
-          },
-          "ReleaseMetadataName": "Reloaded.Memory.SigScan.ReloadedII.ReleaseMetadata.json"
-        },
         "reloaded.sharedlib.hooks": {
           "Config": {
             "UserName": "Sewer56",
@@ -71,6 +62,15 @@
             "AssetFileName": "reloaded.sharedlib.hooks.zip"
           },
           "ReleaseMetadataName": "Sewer56.Update.ReleaseMetadata.json"
+        },
+        "Reloaded.Memory.SigScan.ReloadedII": {
+          "Config": {
+            "UserName": "Reloaded-Project",
+            "RepositoryName": "Reloaded.Memory.SigScan",
+            "UseReleaseTag": false,
+            "AssetFileName": "Mod.zip"
+          },
+          "ReleaseMetadataName": "Reloaded.Memory.SigScan.ReloadedII.ReleaseMetadata.json"
         },
         "UnrealEssentials": {
           "Config": {
@@ -114,8 +114,8 @@
   },
   "IsUniversalMod": false,
   "ModDependencies": [
-    "p3rpc.essentials",
-    "BGME.BattleThemes"
+    "BGME.BattleThemes",
+    "p3rpc.essentials"
   ],
   "OptionalDependencies": [],
   "SupportedAppId": [
