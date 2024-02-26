@@ -11,8 +11,8 @@
   "ModNativeDll32": "",
   "ModNativeDll64": "",
   "Tags": [],
-  "CanUnload": null,
-  "HasExports": null,
+  "CanUnload": false,
+  "HasExports": false,
   "IsLibrary": false,
   "ReleaseMetadataFileName": "P3R.bgm.MakotoMP3.battle-themes.ReleaseMetadata.json",
   "PluginData": {
@@ -116,6 +116,11 @@
     "p3rpc.essentials"
   ],
   "OptionalDependencies": [],
-  "SupportedAppId": ["p5r.exe", "p4g.exe", "p3p.exe", "p3r.exe"],
+  "SupportedAppId": [
+    "p5r.exe",
+    "p4g.exe",
+    "p3p.exe",
+    "p3r.exe"
+  ],
   "ProjectUrl": ""
 }
