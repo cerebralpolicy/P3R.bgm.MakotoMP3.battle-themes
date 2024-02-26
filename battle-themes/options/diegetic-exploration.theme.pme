@@ -16,8 +16,6 @@ const diegetic_exploration_bgm = [
 
 const makoto_mp3 = random_song(diegetic_exploration_bgm)
 
-const BATTLE_THEME = makoto_mp3
-
 // TARTARUS EXPLORATION
     // THEBEL
     global_bgm["tartarus_0d01"]:
